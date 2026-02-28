@@ -1,0 +1,14 @@
+{
+    "name": "cordova-plugin-firebasex-inappmessaging",
+    "version": "1.0.0",
+    "description": "Firebase In-App Messaging module for cordova-plugin-firebasex",
+    "license": "MIT",
+    "cordova": {
+        "id": "cordova-plugin-firebasex-inappmessaging",
+        "platforms": ["android", "ios"]
+    },
+    "keywords": ["cordova", "firebase", "in-app messaging", "inappmessaging"],
+    "dependencies": {
+        "cordova-plugin-firebasex-core": ">=1.0.0"
+    }
+}
