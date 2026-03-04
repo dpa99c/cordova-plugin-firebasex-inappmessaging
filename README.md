@@ -29,6 +29,13 @@ or by running:
 
 **This module depends on `cordova-plugin-firebasex-core` which will be installed automatically as a dependency.**
 
+## Plugin variables
+
+| Variable | Default | Description |
+|---|---|---|
+| `ANDROID_FIREBASE_INAPPMESSAGING_VERSION` | `22.0.2` | Android Firebase In-App Messaging SDK version. |
+| `IOS_FIREBASE_SDK_VERSION` | `12.9.0-beta` | iOS Firebase SDK version (for inappmessaging pod). |
+
 # Usage
 
 This is an SDK-only plugin — it includes the Firebase In-App Messaging SDK but has no JavaScript API.
