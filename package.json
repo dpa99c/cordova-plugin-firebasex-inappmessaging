@@ -1,6 +1,6 @@
 {
     "name": "cordova-plugin-firebasex-inappmessaging",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Firebase In-App Messaging module for cordova-plugin-firebasex",
     "author": "Dave Alden",
     "license": "MIT",
