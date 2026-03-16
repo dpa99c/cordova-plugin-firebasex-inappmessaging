@@ -55,6 +55,8 @@ function resolvePluginVariables(context) {
                     }
                 }
             });
+        } else {
+            console.warn("[FirebasexInAppMessaging] config.xml not found at " + configXmlPath + ". Cannot read plugin variables from config.xml.");
         }
     } catch (e) {
         console.warn("[FirebasexInAppMessaging] Could not read config.xml for plugin variables: " + e.message);
@@ -75,7 +77,10 @@ function resolvePluginVariables(context) {
                     }
                 });
             }
+        } else {
+            console.warn("[FirebasexInAppMessaging] package.json not found at " + packageJsonPath + ". Cannot read plugin variables from package.json.");
         }
+
     } catch (e) {
         console.warn("[FirebasexInAppMessaging] Could not read package.json for plugin variables: " + e.message);
     }
@@ -99,11 +104,17 @@ function resolvePluginVariables(context) {
  */
 module.exports = function(context) {
     var pluginVariables = resolvePluginVariables(context);
-    if (!pluginVariables["IOS_FIREBASE_SDK_VERSION"]) return;
+    if (!pluginVariables["IOS_FIREBASE_SDK_VERSION"]){
+        console.warn("[FirebasexInAppMessaging] IOS_FIREBASE_SDK_VERSION variable not set. Skipping Podfile update for FirebaseInAppMessaging pod version.");
+        return;
+    }
 
     var iosPlatformPath = path.join(context.opts.projectRoot, "platforms", "ios");
     var podFilePath = path.join(iosPlatformPath, "Podfile");
-    if (!fs.existsSync(podFilePath)) return;
+    if (!fs.existsSync(podFilePath)) {
+        console.warn("[FirebasexInAppMessaging] Podfile not found at " + podFilePath + ". Cannot update FirebaseInAppMessaging pod version.");
+        return;
+    }
 
     try {
         var podFileContents = fs.readFileSync(podFilePath, "utf-8");
