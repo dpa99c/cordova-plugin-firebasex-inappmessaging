@@ -3,7 +3,7 @@
  * @brief Hook script that runs after the inappmessaging plugin is installed on iOS.
  *
  * Updates the FirebaseInAppMessaging pod version in the Podfile based on the
- * IOS_FIREBASE_SDK_VERSION plugin variable, allowing users to override the
+ * IOS_FIREBASE_SDK_BETA_VERSION plugin variable, allowing users to override the
  * default Firebase In-App Messaging SDK version.
  *
  * Plugin variables are resolved using a 4-layer override strategy:
@@ -104,8 +104,8 @@ function resolvePluginVariables(context) {
  */
 module.exports = function(context) {
     var pluginVariables = resolvePluginVariables(context);
-    if (!pluginVariables["IOS_FIREBASE_SDK_VERSION"]){
-        console.warn("[FirebasexInAppMessaging] IOS_FIREBASE_SDK_VERSION variable not set. Skipping Podfile update for FirebaseInAppMessaging pod version.");
+    if (!pluginVariables["IOS_FIREBASE_SDK_BETA_VERSION"]){
+        console.warn("[FirebasexInAppMessaging] IOS_FIREBASE_SDK_BETA_VERSION variable not set. Skipping Podfile update for FirebaseInAppMessaging pod version.");
         return;
     }
 
@@ -118,7 +118,7 @@ module.exports = function(context) {
 
     try {
         var podFileContents = fs.readFileSync(podFilePath, "utf-8");
-        var sdkVersion = pluginVariables["IOS_FIREBASE_SDK_VERSION"];
+        var sdkVersion = pluginVariables["IOS_FIREBASE_SDK_BETA_VERSION"];
         // Version regex allows for pre-release suffixes like -beta
         var versionRegex = /\d+\.\d+\.\d+[^'"]*/;
         var podRegEx = /pod 'FirebaseInAppMessaging', '(\d+\.\d+\.\d+[^'"]*)'/g;
@@ -129,6 +129,7 @@ module.exports = function(context) {
                 var currentVersion = match.match(versionRegex)[0];
                 if (currentVersion !== sdkVersion) {
                     podFileContents = podFileContents.replace(match, match.replace(currentVersion, sdkVersion));
+                    console.log("[FirebasexInAppMessaging] Updating FirebaseInAppMessaging pod version from v" + currentVersion + " to v" + sdkVersion);
                     modified = true;
                 }
             });

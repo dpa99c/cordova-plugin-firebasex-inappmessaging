@@ -27,7 +27,7 @@
 
     <!-- iOS -->
     <platform name="ios">
-        <preference name="IOS_FIREBASE_SDK_VERSION" default="12.9.0-beta" />
+        <preference name="IOS_FIREBASE_SDK_BETA_VERSION" default="12.9.0-beta" />
 
         <podspec>
             <config>

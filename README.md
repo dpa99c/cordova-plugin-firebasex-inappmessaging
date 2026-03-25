@@ -31,7 +31,9 @@ or by running:
 | Variable | Default | Description |
 |---|---|---|
 | `ANDROID_FIREBASE_INAPPMESSAGING_VERSION` | `22.0.2` | Android Firebase In-App Messaging SDK version. |
-| `IOS_FIREBASE_SDK_VERSION` | `12.9.0-beta` | iOS Firebase SDK version (for inappmessaging pod). |
+| `IOS_FIREBASE_SDK_BETA_VERSION` | `12.9.0-beta` | iOS Firebase SDK version (for inappmessaging pod). |
+
+Note: The iOS Firebase SDK for Inapp Messaging currently remains in a permanent beta state, so trying to use the latest stable version of the Firebase SDK will result in build errors due to missing Inapp Messaging pod dependencies. The `IOS_FIREBASE_SDK_BETA_VERSION` variable allows you to specify a beta version of the Firebase SDK that includes the necessary Inapp Messaging pod dependencies.
 
 # Usage
 
