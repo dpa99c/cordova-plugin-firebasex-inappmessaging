@@ -27,6 +27,7 @@
 
     <!-- iOS -->
     <platform name="ios" package="swift">
+        <preference name="IOS_FIREBASE_SDK_VERSION" default="12.9.0" />
         <preference name="IOS_FIREBASE_SDK_BETA_VERSION" default="12.9.0-beta" />
 
         <podspec>
@@ -39,6 +40,7 @@
         </podspec>
 
         <hook type="after_plugin_install" src="scripts/ios/after_plugin_install.js" />
+        <hook type="after_prepare" src="scripts/ios/after_plugin_install.js" />
     </platform>
 
 </plugin>

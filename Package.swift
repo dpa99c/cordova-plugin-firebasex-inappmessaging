@@ -2,11 +2,11 @@
 
 import PackageDescription
 
-let firebaseBetaSDKVersion: Version = "12.9.0-beta"
+let firebaseSDKVersion: Version = "12.9.0"
 
 let package = Package(
     name: "cordova-plugin-firebasex-inappmessaging",
-    platforms: [.iOS(.v13)],
+    platforms: [.iOS(.v15)],
     products: [
         .library(
             name: "cordova-plugin-firebasex-inappmessaging",
@@ -14,13 +14,13 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/firebase/firebase-ios-sdk.git", exact: firebaseBetaSDKVersion)
+        .package(url: "https://github.com/firebase/firebase-ios-sdk.git", exact: firebaseSDKVersion)
     ],
     targets: [
         .target(
             name: "cordova-plugin-firebasex-inappmessaging",
             dependencies: [
-                .product(name: "FirebaseInAppMessaging", package: "firebase-ios-sdk")
+                .product(name: "FirebaseInAppMessaging-Beta", package: "firebase-ios-sdk")
             ],
             path: "src/ios"
         )
