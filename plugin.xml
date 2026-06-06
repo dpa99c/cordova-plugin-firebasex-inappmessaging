@@ -27,15 +27,15 @@
 
     <!-- iOS -->
     <platform name="ios" package="swift">
-        <preference name="IOS_FIREBASE_SDK_VERSION" default="12.9.0" />
-        <preference name="IOS_FIREBASE_SDK_BETA_VERSION" default="12.9.0-beta" />
+        <preference name="IOS_FIREBASE_SDK_VERSION" default="12.14.0" />
+        <preference name="IOS_FIREBASE_SDK_BETA_VERSION" default="12.14.0-beta" />
 
         <podspec>
             <config>
                 <source url="https://cdn.cocoapods.org/" />
             </config>
             <pods use-frameworks="true">
-                <pod name="FirebaseInAppMessaging" spec="12.9.0-beta" nospm="true"/>
+                <pod name="FirebaseInAppMessaging" spec="12.14.0-beta" nospm="true"/>
             </pods>
         </podspec>
 

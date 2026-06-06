@@ -20,9 +20,9 @@ var PLUGIN_ID = "cordova-plugin-firebasex-inappmessaging";
 /** @constant {string} The wrapper meta-plugin identifier used as a fallback source for plugin variables. */
 var WRAPPER_PLUGIN_ID = "cordova-plugin-firebasex";
 /** @constant {string} Default Firebase SDK version for SwiftPM when no override is provided. */
-var DEFAULT_IOS_FIREBASE_SDK_VERSION = "12.9.0";
+var DEFAULT_IOS_FIREBASE_SDK_VERSION = "12.14.0";
 /** @constant {string} Default Firebase beta SDK version for SwiftPM and CocoaPods when no override is provided. */
-var DEFAULT_IOS_FIREBASE_SDK_BETA_VERSION = "12.9.0-beta";
+var DEFAULT_IOS_FIREBASE_SDK_BETA_VERSION = "12.14.0-beta";
 
 function isSwiftPackageManagerEnabled(projectRoot) {
     var iosPlatformPath = path.join(projectRoot, "platforms", "ios");
