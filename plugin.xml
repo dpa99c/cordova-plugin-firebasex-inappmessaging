@@ -19,7 +19,7 @@
 
     <!-- Android -->
     <platform name="android">
-        <preference name="ANDROID_FIREBASE_INAPPMESSAGING_VERSION" default="22.0.2" />
+        <preference name="ANDROID_FIREBASE_INAPPMESSAGING_VERSION" default="22.0.3" />
 
         <framework src="com.google.firebase:firebase-inappmessaging:$ANDROID_FIREBASE_INAPPMESSAGING_VERSION" />
         <framework src="com.google.firebase:firebase-inappmessaging-display:$ANDROID_FIREBASE_INAPPMESSAGING_VERSION" />
